@@ -11,6 +11,12 @@ const { data: home } = reactive(await useAsyncData("home", () =>
 	queryContent("/pages/home").findOne())
 );
 
+useHead({
+  script: [
+    { src: "https://identity.netlify.com/v1/netlify-identity-widget.js" },
+  ],
+});
+
 setSeoHead(home.SEOmetaData);
 
 </script>
